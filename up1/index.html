@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access Activated | VB Protocol</title>
+
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+  ttq.load('D9VOLM3C77UDBOEDN2D0');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html,
+  body {
+    background: #070707;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    color: #ffffff;
+    min-height: 100vh;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at top, rgba(220, 0, 0, 0.12), transparent 35%),
+      #070707;
+  }
+
+  .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .brand {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+
+  .brand-main {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    line-height: 1;
+  }
+
+  .brand-sub {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #e00000;
+    margin-top: 5px;
+    text-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(220, 0, 0, 0.12);
+    border: 1px solid rgba(255, 40, 40, 0.25);
+    color: #ff3b3b;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    padding: 11px 22px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+  }
+
+  .badge::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ef1b1b;
+    box-shadow: 0 0 10px rgba(239, 27, 27, 0.8);
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.45;
+      transform: scale(1.25);
+    }
+  }
+
+  .card {
+    width: 100%;
+    background: #101010;
+    border: 1px solid #2b2b2b;
+    border-top: 2px solid #d80000;
+    border-radius: 24px;
+    padding: 38px 28px 28px;
+    box-shadow:
+      0 10px 40px rgba(0, 0, 0, 0.6),
+      0 0 30px rgba(220, 0, 0, 0.08);
+  }
+
+  .icon-circle {
+    width: 84px;
+    height: 84px;
+    background: linear-gradient(145deg, #ef1717, #a80000);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    box-shadow:
+      0 8px 25px rgba(220, 0, 0, 0.3),
+      0 0 30px rgba(220, 0, 0, 0.12);
+  }
+
+  .icon-circle svg {
+    width: 43px;
+    height: 43px;
+    color: #ffffff;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.18;
+    color: #ffffff;
+    margin-bottom: 18px;
+    letter-spacing: -0.6px;
+  }
+
+  .highlight {
+    color: #f02020;
+  }
+
+  .subtitle {
+    text-align: center;
+    color: #a8a8a8;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  .stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 30px;
+  }
+
+  .step {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .step-done {
+    background: #d80000;
+    box-shadow: 0 0 12px rgba(216, 0, 0, 0.25);
+  }
+
+  .step-current {
+    background: #680000;
+    border: 2px solid #e51b1b;
+    box-shadow: 0 0 15px rgba(216, 0, 0, 0.25);
+  }
+
+  .step svg {
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+  }
+
+  .step-line {
+    flex: 1;
+    max-width: 56px;
+    height: 2px;
+    background: #d80000;
+  }
+
+  .access-label {
+    text-align: center;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .checkout-wrapper {
+    width: 100%;
+    margin-bottom: 24px;
+    min-height: 60px;
+  }
+
+  #vendepay-upsell-container {
+    width: 100%;
+  }
+
+  #vendepay-upsell-container iframe {
+    width: 100% !important;
+    border: none;
+    border-radius: 12px;
+  }
+
+  .divider {
+    height: 1px;
+    background: #292929;
+    margin: 8px 0 22px;
+  }
+
+  .trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 22px;
+  }
+
+  .trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #c4c4c4;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .trust-item svg {
+    width: 18px;
+    height: 18px;
+    color: #e61b1b;
+    flex-shrink: 0;
+  }
+
+  .footer-text {
+    text-align: center;
+    margin-top: 22px;
+    color: #575757;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 380px) {
+    h1 {
+      font-size: 26px;
+    }
+
+    .card {
+      padding: 32px 20px 24px;
+    }
+
+    .badge {
+      font-size: 11px;
+      padding: 10px 17px;
+    }
+
+    .brand-main {
+      font-size: 23px;
+    }
+
+    .brand-sub {
+      font-size: 20px;
+    }
+
+    .trust-item {
+      font-size: 13px;
+    }
+
+    .trust-badges {
+      gap: 12px 16px;
+    }
+
+    .step {
+      width: 38px;
+      height: 38px;
+      font-size: 15px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <div class="brand">
+    <div class="brand-main">VB PROTOCOL</div>
+    <div class="brand-sub">VIGOR BOOST</div>
+  </div>
+
+  <div class="badge">
+    ACCESS ACTIVATED
+  </div>
+
+  <div class="card">
+
+    <div class="icon-circle">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="3.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+
+    <h1>
+      Everything is ready.<br>
+      <span class="highlight">Your access is activated.</span>
+    </h1>
+
+    <p class="subtitle">
+      Your order has been successfully confirmed.
+      Simply click the button below to access your
+      <strong style="color:#ffffff;">VB Protocol</strong>.
+    </p>
+
+    <div class="stepper">
+
+      <div class="step step-done">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+
+      <div class="step-line"></div>
+
+      <div class="step step-done">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+
+      <div class="step-line"></div>
+
+      <div class="step step-current">
+        3
+      </div>
+
+    </div>
+
+    <div class="access-label">
+      Access your VB Protocol below
+    </div>
+
+    <!-- Container onde o upsell será exibido -->
+    <div class="checkout-wrapper">
+      <div id="vendepay-upsell-container"></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="trust-badges">
+
+      <div class="trust-item">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <span>60-Day Guarantee</span>
+      </div>
+
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/>
+        </svg>
+        <span>Instant Access</span>
+      </div>
+
+      <div class="trust-item">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        <span>Secure Payment</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-text">
+    © 2026 VB Protocol. All rights reserved.
+  </div>
+</div>
+
+<!-- Script do widget Vendepay Upsell -->
+<script src="https://widget.vendepay.com/upsell-widget/v1/vendepay-upsell-widget-1.0.16.js?upsellId=2f96070b-e914-4a9b-8561-cd8d868aa2a2"
+        onload="window.VendepayUpsellWidget && window.VendepayUpsellWidget.showIframe('vendepay-upsell-container')">
+</script>
+
+</body>
+</html>
