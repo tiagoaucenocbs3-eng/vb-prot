@@ -60,25 +60,26 @@
     const check = document.getElementById('checkbox');
     let clicked = false;
 
-    function getDestinationUrl() {
+        function getDestinationUrl() {
       const params = new URLSearchParams(window.location.search);
-      let url = params.get('to') || params.get('redirect') || params.get('url') || cfg.destinationUrl || '#';
-      if (url && url !== '#' && window.location.search) {
-        const searchParams = new URLSearchParams(window.location.search);
-        if (url.includes('?')) {
-          const parts = url.split('?');
-          const urlParams = new URLSearchParams(parts[1]);
-          searchParams.forEach((value, key) => {
-            if (!urlParams.has(key)) {
-              urlParams.set(key, value);
-            }
-          });
-          url = parts[0] + '?' + urlParams.toString();
-        } else {
-          url = url + '?' + searchParams.toString();
-        }
+      let target = params.get('to') || params.get('redirect') || params.get('url') || cfg.destinationUrl || '#';
+      
+      if (target === '#') return target;
+      
+      let resolvedUrl;
+      try {
+        resolvedUrl = new URL(target, window.location.href);
+      } catch (e) {
+        return target;
       }
-      return url;
+      
+      params.forEach((value, key) => {
+        if (key !== 'to' && key !== 'redirect' && key !== 'url') {
+          resolvedUrl.searchParams.set(key, value);
+        }
+      });
+      
+      return resolvedUrl.toString();
     }
 
     function isValidDestination(url) {

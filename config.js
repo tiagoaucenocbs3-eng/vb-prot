@@ -1,7 +1,7 @@
 window.PRESELL_CONFIG = {
   // Final link after click/verification.
   // Change this value to the final destination site.
-  destinationUrl: 'inicio/',
+  destinationUrl: 'inicio',
 
   // If true, redirects automatically after verification.
   redirectAfterVerify: true,
