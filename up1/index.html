@@ -397,7 +397,27 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
     <!-- Container onde o upsell será exibido -->
     <div class="checkout-wrapper">
-      <div id="vendepay-upsell-container"></div>
+      <div style="display:flex;flex-direction:column;gap:12px;width:100%;font-family:inherit;" data-cooud-flow-root>
+        <script type="application/json">{"steps":[{"title":"VB Protocol – Vigor Boost","priceText":"$67.00","primary":{"id":"01M06S353VJ61RYXWG8198H75B","redirect":"https://vb-prot-teny.vercel.app/up1","label":"YES, I WANT VIGOR BOOST","style":"display: flex; align-items: center; justify-content: center; text-decoration: none; font-family: inherit; font-weight: 600; padding: 16px 24px; font-size: 17px; border-radius: 8px; background-color: #059669; color: #ffffff; border: none; width: 100%; cursor: pointer;"},"fallback":null,"dismiss":{"primary":{"label":"N.","style":"display: flex; align-items: center; justify-content: center; text-decoration: none; font-family: inherit; font-weight: 400; padding: 12px 20px; font-size: 15px; border-radius: 8px; background-color: transparent; color: #6b7280; border: none; width: 100%; cursor: pointer;"},"fallback":{"label":"N.","style":"display: flex; align-items: center; justify-content: center; text-decoration: none; font-family: inherit; font-weight: 400; padding: 12px 20px; font-size: 15px; border-radius: 8px; background-color: transparent; color: #6b7280; border: none; width: 100%; cursor: pointer;"}}}],"initialStep":0,"startInFallback":false,"routingMode":"legacy","processingText":"Processando...","noMoreOffersText":"Obrigado! Sem mais ofertas.","connectScriptUrl":"https://orbit.cooud.com/scripts/connect"}</script>
+        <button
+          type="button"
+          data-cooud-flow-primary
+          data-connect-action="take"
+          data-connect-id="01M06S353VJ61RYXWG8198H75B"
+          data-connect-redirect="https://vb-prot-teny.vercel.app/up1"
+          style="display: flex; align-items: center; justify-content: center; text-decoration: none; font-family: inherit; font-weight: 600; padding: 16px 24px; font-size: 17px; border-radius: 8px; background-color: #059669; color: #ffffff; border: none; width: 100%; cursor: pointer;"
+        >
+          YES, I WANT VIGOR BOOST
+        </button>
+        <button
+          type="button"
+          data-cooud-flow-dismiss
+          data-connect-action="dismiss"
+          style="display: none;"
+        >
+          N.
+        </button>
+      </div>
     </div>
 
     <div class="divider"></div>
@@ -448,10 +468,8 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   </div>
 </div>
 
-<!-- Script do widget Vendepay Upsell -->
-<script src="https://widget.vendepay.com/upsell-widget/v1/vendepay-upsell-widget-1.0.16.js?upsellId=2f96070b-e914-4a9b-8561-cd8d868aa2a2"
-        onload="window.VendepayUpsellWidget && window.VendepayUpsellWidget.showIframe('vendepay-upsell-container')">
-</script>
+<script src="https://js.stripe.com/v3/" async defer></script>
+<script src="https://orbit.cooud.com/scripts/flow" async defer></script>
 
 </body>
 </html>
